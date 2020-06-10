@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="xc.user.api" />
+        <module name="xc.eureka.server" />
+        <module name="xc.common.api" />
+        <module name="xc.user" />
+        <module name="xc.gateway.server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="xc.common.api" target="1.8" />
+      <module name="xc.eureka.server" target="1.8" />
+      <module name="xc.framework" target="1.8" />
+      <module name="xc.gateway.server" target="1.8" />
+      <module name="xc.user" target="1.8" />
+      <module name="xc.user.api" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
