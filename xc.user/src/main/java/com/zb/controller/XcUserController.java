@@ -36,7 +36,7 @@ public class XcUserController {
      * @throws Exception
      */
     @PostMapping(value = "/getXcUserById/{id}")
-    public XcUser getXcUserById(@PathVariable("id") Long id) throws Exception {
+    public XcUser getXcUserById(@PathVariable("id") String id) throws Exception {
         return xcUserService.getXcUserById(id);
     }
 
@@ -82,15 +82,35 @@ public class XcUserController {
      * 发送短信 输入手机号 18361211916
      * @param phone
      * @return
-     */
+     *//*
     @PostMapping(value = "/sendPhoneMsg")
-    public Integer sendPhoneMsg(String phone){
+    public String sendPhoneMsg(String phone, HttpSession session){
         int code = (int)(Math.random()*10000);
         System.out.println(code);
         //phone:18361211916 templated:模板编号 new String[]{code+"","1"}：随机数
         smsService.send(phone,"1", new String[]{code+"","1"});
-        return code;
-    }
+        String key = "phone:" + phone;
+        session.setAttribute(key, code + "");
+        return "success";
+    }*/
+
+    /**
+     * 验证手机发送的验证码与接收的验证码是否一致
+     * @param phone
+     * @param code
+     * @param session
+     * @param request
+     * @return
+     *//*
+    public String verif(String phone, String code, HttpSession session, HttpServletRequest request) {
+        String key = "phone:" + phone;
+        String strCode = (String) session.getAttribute(key);
+        if (!strCode.equals(code)) {
+            request.setAttribute("msg", "验证码不正确！");
+            return "error";
+        }
+        return "success";
+    }*/
     /**
      * 用户或者管理员修改个人信息 POST:
      * @param xcUser
@@ -108,7 +128,7 @@ public class XcUserController {
      * @throws Exception
      */
     @PostMapping(value = "/deleteXcUserById/{id}")
-    public Integer deleteXcUserById(@PathVariable("id") Long id) throws Exception {
+    public Integer deleteXcUserById(@PathVariable("id") String id) throws Exception {
         return xcUserService.deleteXcUserById(id);
     }
 

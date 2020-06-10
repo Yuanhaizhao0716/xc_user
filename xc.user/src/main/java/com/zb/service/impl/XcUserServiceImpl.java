@@ -26,7 +26,7 @@ public class XcUserServiceImpl implements XcUserService {
     private XcUserFeignClient xcUserFeignClient;
 
     @Override
-    public XcUser getXcUserById(Long id) throws Exception {
+    public XcUser getXcUserById(String id) throws Exception {
         XcUser user = xcUserMapper.getXcUserById(id);
         return user;
     }
@@ -56,7 +56,7 @@ public class XcUserServiceImpl implements XcUserService {
     }
 
     @Override
-    public Integer deleteXcUserById(Long id) throws Exception {
+    public Integer deleteXcUserById(String id) throws Exception {
         Integer num = xcUserMapper.deleteXcUserById(id);
         return num;
     }

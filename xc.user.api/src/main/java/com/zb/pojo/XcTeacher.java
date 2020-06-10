@@ -8,7 +8,7 @@ public class XcTeacher implements Serializable {
     //老师表id
     private String id;
     //用户id对应xc_user表id
-    private String userId;
+    private String user_id;
     //称呼
     private String name;
     //个人简介
@@ -26,12 +26,15 @@ public class XcTeacher implements Serializable {
     public  String getId(){
         return this.id;
     }
-    public void setUserId (String  userId){
-        this.userId=userId;
+
+    public String getUser_id() {
+        return user_id;
     }
-    public  String getUserId(){
-        return this.userId;
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
+
     public void setName (String  name){
         this.name=name;
     }

@@ -10,7 +10,7 @@ import java.util.Map;
 @Mapper
 public interface XcTeacherMapper {
 
-	public XcTeacher getXcTeacherById(@Param(value = "id") Long id)throws Exception;
+	public XcTeacher getXcTeacherById(@Param(value = "id") String id)throws Exception;
 
 	public List<XcTeacher>	getXcTeacherListByMap(Map<String, Object> param)throws Exception;
 
@@ -20,8 +20,7 @@ public interface XcTeacherMapper {
 
 	public Integer updateXcTeacher(XcTeacher xcTeacher)throws Exception;
 
-	public Integer deleteXcTeacherById(@Param(value = "id") Long id)throws Exception;
+	public Integer deleteXcTeacherById(@Param(value = "id") String id)throws Exception;
 
-	public Integer batchDeleteXcTeacher(Map<String, List<String>> params);
 
 }

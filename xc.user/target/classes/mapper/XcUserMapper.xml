@@ -163,10 +163,7 @@
 
     <update id="updateXcUser" parameterType="com.zb.pojo.XcUser">
         update xc_user
-        <trim prefix="set" suffixOverrides="," suffix="where id=#{id}">
-                        <if test="username != null and username!=''">
-                            username=#{username},
-                        </if>
+        <trim prefix="set" suffixOverrides="," suffix="where username=#{username}">
                         <if test="password != null and password!=''">
                             password=MD5(#{password}),
                         </if>

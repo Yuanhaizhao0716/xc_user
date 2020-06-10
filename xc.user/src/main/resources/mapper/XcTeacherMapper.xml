@@ -87,27 +87,14 @@
     </select>
 
     <insert id="insertXcTeacher" parameterType="com.zb.pojo.XcTeacher">
-        insert into xc_teacher(
-                        user_id,
-                        name,
-                        intro,
-                        resume,
-                        pic,
-                        isRecommend)
-        values(
-                     #{userId},
-                     #{name},
-                     #{intro},
-                     #{resume},
-                     #{pic},
-                    #{isRecommend})
+        INSERT INTO xc_teacher VALUES(#{id},#{user_id},#{name},#{intro},#{resume},#{pic},#{isRecommend})
     </insert>
 
     <update id="updateXcTeacher" parameterType="com.zb.pojo.XcTeacher">
         update xc_teacher
         <trim prefix="set" suffixOverrides="," suffix="where id=#{id}">
-                        <if test="userId != null and userId!=''">
-                            user_id=#{userId},
+                        <if test="user_id != null and user_id!=''">
+                            user_id=#{user_id},
                         </if>
                         <if test="name != null and name!=''">
                             name=#{name},
@@ -126,4 +113,8 @@
                         </if>
         </trim>
     </update>
+
+    <delete id="deleteXcTeacherById" parameterType="com.zb.pojo.XcTeacher">
+        DELETE  FROM xc_teacher WHERE id=#{id}
+    </delete>
 </mapper>

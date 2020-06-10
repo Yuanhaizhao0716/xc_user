@@ -15,7 +15,7 @@ import java.util.Map;
  */
 public interface XcUserService {
 
-    public XcUser getXcUserById(Long id)throws Exception;
+    public XcUser getXcUserById(String id)throws Exception;
 
     public XcUser getXcUserListByMap(String username, String password)throws Exception;
 
@@ -23,5 +23,5 @@ public interface XcUserService {
 
     public Integer updateXcUser(XcUser xcUser)throws Exception;
 
-    public Integer deleteXcUserById(Long id)throws Exception;
+    public Integer deleteXcUserById(String id)throws Exception;
 }

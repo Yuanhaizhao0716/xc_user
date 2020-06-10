@@ -15,7 +15,7 @@ public interface XcUserMapper {
 	 * @return
 	 * @throws Exception
 	 */
-	public XcUser getXcUserById(@Param("id") Long id)throws Exception;
+	public XcUser getXcUserById(@Param("id") String id)throws Exception;
 
 	/**
 	 * 用户或者管理员登录
@@ -47,6 +47,6 @@ public interface XcUserMapper {
 	 * @return
 	 * @throws Exception
 	 */
-	public Integer deleteXcUserById(@Param("id") Long id)throws Exception;
+	public Integer deleteXcUserById(@Param("id") String id)throws Exception;
 
 }

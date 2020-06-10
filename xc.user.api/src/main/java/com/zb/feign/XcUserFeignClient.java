@@ -17,7 +17,7 @@ import java.util.Map;
 public interface XcUserFeignClient {
 
     @PostMapping(value = "/getXcUserById/{id}")
-    public XcUser getXcUserById(@PathVariable("id") Long id)throws Exception;
+    public XcUser getXcUserById(@PathVariable("id") String id)throws Exception;
 
     @PostMapping(value = "/getXcUserListByMap")
     public List<XcUser> getXcUserListByMap(@RequestParam Map<String, Object> param)throws Exception;
@@ -29,5 +29,5 @@ public interface XcUserFeignClient {
     public Integer updateXcUser(@RequestBody XcUser xcUser)throws Exception;
 
     @PostMapping(value = "/deleteXcUserById/{id}")
-    public Integer deleteXcUserById(@PathVariable(value = "id") Long id)throws Exception;
+    public Integer deleteXcUserById(@PathVariable(value = "id") String id)throws Exception;
 }
